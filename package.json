@@ -7,7 +7,7 @@
     "copy:index": "cp index.html dist",
     "build": "node esbuild/build.js",
     "test": "jest --watch",
-    "serve": "esbuild src/app.ts --bundle --sourcemap --watch --outdir=dist --servedir=."
+    "serve": "esbuild src/app.ts style.css --bundle --sourcemap --watch --outdir=dist --servedir=."
   },
   "repository": {
     "type": "git",
