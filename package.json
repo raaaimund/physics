@@ -1,0 +1,29 @@
+{
+  "name": "physics",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.ts",
+  "scripts": {
+    "copy:index": "cp index.html dist",
+    "build": "node esbuild/build.js",
+    "test": "jest --watch",
+    "serve": "esbuild src/app.ts --bundle --sourcemap --watch --outdir=dist --servedir=."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raaaimund/physics.git"
+  },
+  "author": "Raimund Rittnauer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raaaimund/physics/issues"
+  },
+  "homepage": "https://github.com/raaaimund/physics#readme",
+  "devDependencies": {
+    "@types/jest": "^29.5.0",
+    "esbuild": "0.17.14",
+    "jest": "^29.5.0",
+    "ts-jest": "^29.0.5",
+    "typescript": "^5.0.3"
+  }
+}
