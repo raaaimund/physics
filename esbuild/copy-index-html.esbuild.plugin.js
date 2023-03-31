@@ -15,8 +15,8 @@ const copyIndexHtmlEsbuildPlugin = {
         build.onEnd(async (result) => {
             const fileName = 'index.html';
             await copyFile(fileName, `${build.initialOptions.outdir}/${fileName}`, {
-                searchValue: /\.\/dist\/app.js/g,
-                replaceValue: 'app.js'
+                searchValue: /\.\/dist\/src\/app.js/g,
+                replaceValue: '\.\/src\/app.js'
             });
         });
     },
