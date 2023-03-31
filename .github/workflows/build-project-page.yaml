@@ -19,7 +19,7 @@ concurrency:
 
 jobs:
   build:
-    runs-on: 18.15.0-alpine3.17
+    runs-on: node:18.15.0-alpine3.17
 
     steps:
       - uses: actions/checkout@v3
