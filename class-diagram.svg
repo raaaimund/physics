@@ -1,0 +1,235 @@
+<svg version="1.1" baseProfile="full" width="1522.5" height="722.0" viewbox="0 0 1522.5 722" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events">
+<desc >#.interface: fill=lightblue
+#.enumeration: fill=lightgreen
+#.type: fill=lightgray
+[CircleCreationAnimator|-creationAnimationId: number;-animationStartedTime: number;-x: number;-y: number;-_gameBoard: GameBoard|+startCreationAnimation(): void;+stopCreationAnimation(): number;-drawCreationAnimation(): void]
+[CircleCreationAnimator]  -  [GameBoard]
+[CirclesAnimator|-_circles: Circle\[\];-_circlesDrawer: CirclesDrawer|+startAnimation(): void;+addCircle(): void]
+[CirclesAnimator]  - 0..* [Circle]
+[CirclesAnimator]  -  [CirclesDrawer]
+[CirclesDrawer|-_gameboard: GameBoard|+drawAllCircles(): void;-drawCircle(): void]
+[CirclesDrawer]  -  [GameBoard]
+[Circle|+static STARTING_ANGLE: 0;+static ENDING_ANGLE: number;-_x: number;-_y: number;-xDirection: number;-yDirection: number;-_radius: number;-_color: string|-reverseXDirection(): void;-reverseYDirection(): void;-isAtLeftBorder(): boolean;-isAtRightBorder(): boolean;-isAtLeftOrRightBorder(): boolean;-isAtTopBorder(): boolean;-isAtBottomBorder(): boolean;-isAtTopOrBottomBorder(): boolean;-moveInXDirection(): void;-moveInYDirection(): void;+move(): void]
+[Color||+static getRandomColor(): string;+static getRgbaFromHex(): string;+static getCreationAnimationColor(): string]
+[Direction||+static getRandomDirection(): number]
+[GameBoard|-_ctx: CanvasRenderingContext2D;-_canvas: HTMLCanvasElement;-_width: number;-_height: number|]</desc>
+<g stroke-width="1.0" text-align="left" font="12pt Helvetica, Arial, sans-serif" font-size="12pt" font-family="Helvetica" font-weight="normal" font-style="normal">
+<g transform="translate(0.5, 0.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round" stroke="#33322E">
+<g stroke="transparent" fill="transparent">
+<rect x="0.0" y="0.0" height="722.0" width="1522.5" stroke="none"></rect>
+</g>
+<g transform="translate(8, 8)" fill="#33322E">
+<g transform="translate(20, 20)" fill="#33322E" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal">
+<path d="M143.5 428.5 L143.5 531 L181.75806451612902 551 L181.8 551.0 " fill="none"></path>
+<text x="748.0" y="155.0" stroke="none">0..*</text>
+<path d="M703.2 123.0 L740 143 L740 163 L740.0 163.0 " fill="none"></path>
+<path d="M476.8 123.0 L440 143 L440 283 L440.0 283.0 " fill="none"></path>
+<path d="M440.0 391.0 L440 531 L401.741935483871 551 L401.7 551.0 " fill="none"></path>
+<g data-name="CircleCreationAnimator">
+<g fill="#eee8d5" stroke="#33322E" data-name="CircleCreationAnimator">
+<rect x="0.0" y="246.0" height="183.0" width="287.0" data-name="CircleCreationAnimator"></rect>
+<path d="M0.0 277.0 L287.0 277.0" fill="none" data-name="CircleCreationAnimator"></path>
+<path d="M0.0 368.0 L287.0 368.0" fill="none" data-name="CircleCreationAnimator"></path>
+</g>
+<g transform="translate(0, 246)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="CircleCreationAnimator">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="CircleCreationAnimator">
+<a id="src\animations\CircleCreationAnimator.ts.CircleCreationAnimator" xlink:href="src\animations\CircleCreationAnimator.ts"><text x="135.5" y="13.5" stroke="none" text-anchor="middle" data-name="CircleCreationAnimator">CircleCreationAnimator</text></a>
+
+</g>
+</g>
+<g transform="translate(0, 277)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CircleCreationAnimator">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="CircleCreationAnimator">
+<text x="0.0" y="13.5" stroke="none" data-name="CircleCreationAnimator">-creationAnimationId: number</text>
+<text x="0.0" y="28.5" stroke="none" data-name="CircleCreationAnimator">-animationStartedTime: number</text>
+<text x="0.0" y="43.5" stroke="none" data-name="CircleCreationAnimator">-x: number</text>
+<text x="0.0" y="58.5" stroke="none" data-name="CircleCreationAnimator">-y: number</text>
+<text x="0.0" y="73.5" stroke="none" data-name="CircleCreationAnimator">-_gameBoard: GameBoard</text>
+
+</g>
+</g>
+<g transform="translate(0, 368)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CircleCreationAnimator">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="CircleCreationAnimator">
+<text x="0.0" y="13.5" stroke="none" data-name="CircleCreationAnimator">+startCreationAnimation(): void</text>
+<text x="0.0" y="28.5" stroke="none" data-name="CircleCreationAnimator">+stopCreationAnimation(): number</text>
+<text x="0.0" y="43.5" stroke="none" data-name="CircleCreationAnimator">-drawCreationAnimation(): void</text>
+
+</g>
+</g>
+</g>
+<g data-name="CirclesAnimator">
+<g fill="#eee8d5" stroke="#33322E" data-name="CirclesAnimator">
+<rect x="461.0" y="0.0" height="123.0" width="259.0" data-name="CirclesAnimator"></rect>
+<path d="M461.0 31.0 L720.0 31.0" fill="none" data-name="CirclesAnimator"></path>
+<path d="M461.0 77.0 L720.0 77.0" fill="none" data-name="CirclesAnimator"></path>
+</g>
+<g transform="translate(461, 0)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="CirclesAnimator">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="CirclesAnimator">
+<a id="src\animations\CirclesAnimator.ts.CirclesAnimator" xlink:href="src\animations\CirclesAnimator.ts"><text x="121.5" y="13.5" stroke="none" text-anchor="middle" data-name="CirclesAnimator">CirclesAnimator</text></a>
+
+</g>
+</g>
+<g transform="translate(461, 31)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CirclesAnimator">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="CirclesAnimator">
+<text x="0.0" y="13.5" stroke="none" data-name="CirclesAnimator">-_circles: Circle[]</text>
+<text x="0.0" y="28.5" stroke="none" data-name="CirclesAnimator">-_circlesDrawer: CirclesDrawer</text>
+
+</g>
+</g>
+<g transform="translate(461, 77)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CirclesAnimator">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="CirclesAnimator">
+<text x="0.0" y="13.5" stroke="none" data-name="CirclesAnimator">+startAnimation(): void</text>
+<text x="0.0" y="28.5" stroke="none" data-name="CirclesAnimator">+addCircle(): void</text>
+
+</g>
+</g>
+</g>
+<g data-name="CirclesDrawer">
+<g fill="#eee8d5" stroke="#33322E" data-name="CirclesDrawer">
+<rect x="327.0" y="283.0" height="108.0" width="226.0" data-name="CirclesDrawer"></rect>
+<path d="M327.0 314.0 L553.0 314.0" fill="none" data-name="CirclesDrawer"></path>
+<path d="M327.0 345.0 L553.0 345.0" fill="none" data-name="CirclesDrawer"></path>
+</g>
+<g transform="translate(327, 283)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="CirclesDrawer">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="CirclesDrawer">
+<a id="src\drawing\CirclesDrawer.ts.CirclesDrawer" xlink:href="src\drawing\CirclesDrawer.ts"><text x="105.0" y="13.5" stroke="none" text-anchor="middle" data-name="CirclesDrawer">CirclesDrawer</text></a>
+
+</g>
+</g>
+<g transform="translate(327, 314)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CirclesDrawer">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="CirclesDrawer">
+<text x="0.0" y="13.5" stroke="none" data-name="CirclesDrawer">-_gameboard: GameBoard</text>
+
+</g>
+</g>
+<g transform="translate(327, 345)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CirclesDrawer">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="CirclesDrawer">
+<text x="0.0" y="13.5" stroke="none" data-name="CirclesDrawer">+drawAllCircles(): void</text>
+<text x="0.0" y="28.5" stroke="none" data-name="CirclesDrawer">-drawCircle(): void</text>
+
+</g>
+</g>
+</g>
+<g data-name="Circle">
+<g fill="#eee8d5" stroke="#33322E" data-name="Circle">
+<rect x="593.0" y="163.0" height="348.0" width="294.0" data-name="Circle"></rect>
+<path d="M593.0 194.0 L887.0 194.0" fill="none" data-name="Circle"></path>
+<path d="M593.0 330.0 L887.0 330.0" fill="none" data-name="Circle"></path>
+</g>
+<g transform="translate(593, 163)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Circle">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Circle">
+<a id="src\models\Circle.ts.Circle" xlink:href="src\models\Circle.ts"><text x="139.0" y="13.5" stroke="none" text-anchor="middle" data-name="Circle">Circle</text></a>
+
+</g>
+</g>
+<g transform="translate(593, 194)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Circle">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Circle">
+<text x="0.0" y="13.5" stroke="none" data-name="Circle">+static STARTING_ANGLE: 0</text>
+<text x="0.0" y="28.5" stroke="none" data-name="Circle">+static ENDING_ANGLE: number</text>
+<text x="0.0" y="43.5" stroke="none" data-name="Circle">-_x: number</text>
+<text x="0.0" y="58.5" stroke="none" data-name="Circle">-_y: number</text>
+<text x="0.0" y="73.5" stroke="none" data-name="Circle">-xDirection: number</text>
+<text x="0.0" y="88.5" stroke="none" data-name="Circle">-yDirection: number</text>
+<text x="0.0" y="103.5" stroke="none" data-name="Circle">-_radius: number</text>
+<text x="0.0" y="118.5" stroke="none" data-name="Circle">-_color: string</text>
+
+</g>
+</g>
+<g transform="translate(593, 330)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Circle">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Circle">
+<text x="0.0" y="13.5" stroke="none" data-name="Circle">-reverseXDirection(): void</text>
+<text x="0.0" y="28.5" stroke="none" data-name="Circle">-reverseYDirection(): void</text>
+<text x="0.0" y="43.5" stroke="none" data-name="Circle">-isAtLeftBorder(): boolean</text>
+<text x="0.0" y="58.5" stroke="none" data-name="Circle">-isAtRightBorder(): boolean</text>
+<text x="0.0" y="73.5" stroke="none" data-name="Circle">-isAtLeftOrRightBorder(): boolean</text>
+<text x="0.0" y="88.5" stroke="none" data-name="Circle">-isAtTopBorder(): boolean</text>
+<text x="0.0" y="103.5" stroke="none" data-name="Circle">-isAtBottomBorder(): boolean</text>
+<text x="0.0" y="118.5" stroke="none" data-name="Circle">-isAtTopOrBottomBorder(): boolean</text>
+<text x="0.0" y="133.5" stroke="none" data-name="Circle">-moveInXDirection(): void</text>
+<text x="0.0" y="148.5" stroke="none" data-name="Circle">-moveInYDirection(): void</text>
+<text x="0.0" y="163.5" stroke="none" data-name="Circle">+move(): void</text>
+
+</g>
+</g>
+</g>
+<g data-name="Color">
+<g fill="#eee8d5" stroke="#33322E" data-name="Color">
+<rect x="760.0" y="12.0" height="100.0" width="351.0" data-name="Color"></rect>
+<path d="M760.0 43.0 L1111.0 43.0" fill="none" data-name="Color"></path>
+<path d="M760.0 51.0 L1111.0 51.0" fill="none" data-name="Color"></path>
+</g>
+<g transform="translate(760, 12)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Color">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Color">
+<a id="src\models\Color.ts.Color" xlink:href="src\models\Color.ts"><text x="167.5" y="13.5" stroke="none" text-anchor="middle" data-name="Color">Color</text></a>
+
+</g>
+</g>
+<g transform="translate(760, 43)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Color">
+<g transform="translate(8, 8)" fill="#33322E" data-name="Color">
+
+</g>
+</g>
+<g transform="translate(760, 51)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Color">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Color">
+<text x="0.0" y="13.5" stroke="none" data-name="Color">+static getRandomColor(): string</text>
+<text x="0.0" y="28.5" stroke="none" data-name="Color">+static getRgbaFromHex(): string</text>
+<text x="0.0" y="43.5" stroke="none" data-name="Color">+static getCreationAnimationColor(): string</text>
+
+</g>
+</g>
+</g>
+<g data-name="Direction">
+<g fill="#eee8d5" stroke="#33322E" data-name="Direction">
+<rect x="1151.0" y="27.0" height="70.0" width="316.0" data-name="Direction"></rect>
+<path d="M1151.0 58.0 L1467.0 58.0" fill="none" data-name="Direction"></path>
+<path d="M1151.0 66.0 L1467.0 66.0" fill="none" data-name="Direction"></path>
+</g>
+<g transform="translate(1151, 27)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="Direction">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Direction">
+<a id="src\models\Direction.ts.Direction" xlink:href="src\models\Direction.ts"><text x="150.0" y="13.5" stroke="none" text-anchor="middle" data-name="Direction">Direction</text></a>
+
+</g>
+</g>
+<g transform="translate(1151, 58)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Direction">
+<g transform="translate(8, 8)" fill="#33322E" data-name="Direction">
+
+</g>
+</g>
+<g transform="translate(1151, 66)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Direction">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Direction">
+<text x="0.0" y="13.5" stroke="none" data-name="Direction">+static getRandomDirection(): number</text>
+
+</g>
+</g>
+</g>
+<g data-name="GameBoard">
+<g fill="#eee8d5" stroke="#33322E" data-name="GameBoard">
+<rect x="147.0" y="551.0" height="115.0" width="290.0" data-name="GameBoard"></rect>
+<path d="M147.0 582.0 L437.0 582.0" fill="none" data-name="GameBoard"></path>
+<path d="M147.0 658.0 L437.0 658.0" fill="none" data-name="GameBoard"></path>
+</g>
+<g transform="translate(147, 551)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="GameBoard">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="GameBoard">
+<a id="src\models\GameBoard.ts.GameBoard" xlink:href="src\models\GameBoard.ts"><text x="137.0" y="13.5" stroke="none" text-anchor="middle" data-name="GameBoard">GameBoard</text></a>
+
+</g>
+</g>
+<g transform="translate(147, 582)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="GameBoard">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="GameBoard">
+<text x="0.0" y="13.5" stroke="none" data-name="GameBoard">-_ctx: CanvasRenderingContext2D</text>
+<text x="0.0" y="28.5" stroke="none" data-name="GameBoard">-_canvas: HTMLCanvasElement</text>
+<text x="0.0" y="43.5" stroke="none" data-name="GameBoard">-_width: number</text>
+<text x="0.0" y="58.5" stroke="none" data-name="GameBoard">-_height: number</text>
+
+</g>
+</g>
+<g transform="translate(147, 658)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="GameBoard">
+<g transform="translate(8, 8)" fill="#33322E" data-name="GameBoard">
+
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>
