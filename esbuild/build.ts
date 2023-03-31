@@ -1,5 +1,5 @@
-const esbuild = require("esbuild");
-const copyIndexHtmlEsbuildPlugin = require("./copy-index-html.esbuild.plugin.js");
+import * as esbuild from "esbuild";
+import copyIndexHtmlEsbuildPlugin from "./copy-index-html.esbuild.plugin";
 
 async function build() {
     await esbuild.build({

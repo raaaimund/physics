@@ -1,4 +1,4 @@
-const fs = require('fs');
+import * as fs from "fs";
 
 const copyFile = async (source, target, {searchValue, replaceValue}) => {
     let fileToCopy = await fs.promises.readFile(source, 'utf8');
@@ -22,4 +22,4 @@ const copyIndexHtmlEsbuildPlugin = {
     },
 }
 
-module.exports = copyIndexHtmlEsbuildPlugin
+export default copyIndexHtmlEsbuildPlugin;

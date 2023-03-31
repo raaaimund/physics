@@ -5,7 +5,7 @@
   "main": "src/app.ts",
   "scripts": {
     "copy:index": "cp index.html dist",
-    "build": "node esbuild/build.js",
+    "build": "ts-node esbuild/build.ts",
     "test": "jest --watch",
     "serve": "esbuild src/app.ts style.css --bundle --sourcemap --watch --outdir=dist --servedir=."
   },

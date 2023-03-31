@@ -1,4 +1,4 @@
-export default class Gameboard {
+export default class GameBoard {
     private readonly _ctx: CanvasRenderingContext2D;
 
     constructor(

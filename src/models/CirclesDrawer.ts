@@ -1,11 +1,11 @@
 import Circle from "./Circle";
-import Gameboard from "./Gameboard";
+import GameBoard from "./GameBoard";
 
 export default class CirclesDrawer {
     private readonly _circles: Circle[];
 
     constructor(
-        private readonly _gameboard: Gameboard,
+        private readonly _gameboard: GameBoard,
     ) {
         this._circles = [];
         this.draw();
