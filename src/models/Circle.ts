@@ -1,29 +1,24 @@
-export default class Circle implements Direction {
+export default class Circle {
+    public static readonly STARTING_ANGLE = 0;
+    public static readonly ENDING_ANGLE = Math.PI * 2;
+
     constructor(
         private _x: number,
         private _y: number,
+        private xDirection: number,
+        private yDirection: number,
         private readonly _radius: number,
         private readonly _color: string,
-        private _xDirection: number,
-        private _yDirection: number,
     ) {
-    }
 
+    }
 
     get x(): number {
         return this._x;
     }
 
-    set x(value: number) {
-        this._x = value;
-    }
-
     get y(): number {
         return this._y;
-    }
-
-    set y(value: number) {
-        this._y = value;
     }
 
     get radius(): number {
@@ -34,34 +29,66 @@ export default class Circle implements Direction {
         return this._color;
     }
 
-    get xDirection(): number {
-        return this._xDirection;
+    private reverseXDirection(): void {
+        this.xDirection = -this.xDirection;
     }
 
-    set xDirection(value: number) {
-        this._xDirection = value;
+    private reverseYDirection(): void {
+        this.yDirection = -this.yDirection;
     }
 
-    get yDirection(): number {
-        return this._yDirection;
+    private isAtLeftBorder(): boolean {
+        return this.x - this._radius < 0;
     }
 
-    set yDirection(value: number) {
-        this._yDirection = value;
+    private isAtRightBorder(width: number): boolean {
+        return this.x + this._radius > width;
     }
 
-    reverseXDirection(): void {
-        this._xDirection = -this._xDirection;
+    private isAtLeftOrRightBorder(width: number): boolean {
+        return this.isAtLeftBorder() || this.isAtRightBorder(width);
     }
 
-    reverseYDirection(): void {
-        this._yDirection = -this._yDirection;
+    private isAtTopBorder(): boolean {
+        return this._y - this._radius < 0;
     }
-}
 
-interface Direction {
-    xDirection: number;
-    reverseXDirection: () => void;
-    yDirection: number;
-    reverseYDirection: () => void;
+    private isAtBottomBorder(height: number): boolean {
+        return this._y + this._radius > height;
+    }
+
+    private isAtTopOrBottomBorder(height: number): boolean {
+        return this.isAtTopBorder() || this.isAtBottomBorder(height);
+    }
+
+    private moveInXDirection(): void {
+        this._x += this.xDirection;
+    }
+
+    private moveInYDirection(): void {
+        this._y += this.yDirection;
+    }
+
+    public move(width: number, height: number) {
+        this.moveInXDirection();
+        this.moveInYDirection();
+
+        if (this.x - this.radius <= 0) {
+            this._x = width - this.radius;
+        } else if (this.x + this.radius > width) {
+            this._x = this.radius;
+        }
+        if (this._y - this.radius <= 0) {
+            this._y = height - this.radius;
+        } else if (this._y + this.radius > height) {
+            this._y = this.radius;
+        }
+
+        if (this.isAtLeftOrRightBorder(width)) {
+            this.reverseXDirection();
+        }
+        if (this.isAtTopOrBottomBorder(height)) {
+            this.reverseYDirection();
+        }
+    }
 }

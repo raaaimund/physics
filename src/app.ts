@@ -1,13 +1,22 @@
 import GameBoard from "./models/GameBoard";
-import CirclesDrawer from "./models/CirclesDrawer";
+import CirclesAnimator from "./animations/CirclesAnimator";
 import Color from "./models/Color";
+import CirclesDrawer from "./drawing/CirclesDrawer";
+import CircleCreationAnimator from "./animations/CircleCreationAnimator";
 
 new EventSource('/esbuild').addEventListener('change', () => location.reload())
 
 const gameBoard = new GameBoard(document.querySelector('canvas'), window.innerWidth, window.innerHeight);
 const circlesDrawer = new CirclesDrawer(gameBoard);
+const circleCreationAnimator = new CircleCreationAnimator(gameBoard);
+const circlesAnimator = new CirclesAnimator(circlesDrawer);
 
-gameBoard.canvas.addEventListener('mousemove', (event) =>
-    circlesDrawer.addCircle(event.clientX, event.clientY, 10, Color.getRandomColor()))
-gameBoard.canvas.addEventListener('touchmove', (event) =>
-    circlesDrawer.addCircle(event.touches[0].clientX, event.touches[0].clientY, 10, Color.getRandomColor()))
+circlesAnimator.startAnimation();
+
+gameBoard.canvas.addEventListener('mousedown', (event) =>
+    circleCreationAnimator.startCreationAnimation(event.clientX, event.clientY))
+
+gameBoard.canvas.addEventListener('mouseup', (event) => {
+    const duration = circleCreationAnimator.stopCreationAnimation();
+    circlesAnimator.addCircle(event.clientX, event.clientY, duration / 10, Color.getRandomColor());
+})
